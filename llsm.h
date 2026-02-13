@@ -262,13 +262,12 @@ typedef struct {
   int maxnhar;         /**< maximum number of harmonics */
   int maxnhar_e;       /**< maximum number of harmonics for noise envelopes */
   int npsd;            /**< size of the PSD vector */
-  int nchannel;        /**< number of channels for noise modeling */
-  FP_TYPE chanfreq[3];   /**< channel frequencies for noise modeling */
   FP_TYPE lip_radius;  /**< default lip radius (cm) */
-
   int f0_refine;       /**< flag for enabling F0 refminement */
   int hm_method;       /**< method for harmonic analysis */
   FP_TYPE rel_winsize; /**< the ratio of window size to period length */
+  int nchannel;        /**< number of channels for noise modeling */
+  FP_TYPE chanfreq[];   /**< channel frequencies for noise modeling */
 } llsm_aoptions;
 
 /** @brief Create default analysis options. */

@@ -24,20 +24,22 @@
 #include "llsmutils.h"
 #include "constants.h"
 
+#define MAX_NCHANNEL 3
+
 llsm_aoptions* llsm_create_aoptions() {
-  llsm_aoptions* ret = malloc(sizeof(llsm_aoptions));
+  llsm_aoptions* ret = malloc(sizeof(llsm_aoptions) + MAX_NCHANNEL * sizeof(FP_TYPE));
   ret -> thop = 0.005;
   ret -> maxnhar = 100;
   ret -> maxnhar_e = 4;
   ret -> npsd = 256;
-  ret -> nchannel = 4;
-  ret -> chanfreq[0] = 2000.0;
-  ret -> chanfreq[1] = 4000.0;
-  ret -> chanfreq[2] = 8000.0;
   ret -> lip_radius = 1.5;
   ret -> f0_refine = 1;
   ret -> hm_method = LLSM_AOPTION_HMCZT;
   ret -> rel_winsize = 4.0;
+  ret -> nchannel = 4;
+  ret -> chanfreq[0] = 2000.0;
+  ret -> chanfreq[1] = 4000.0;
+  ret -> chanfreq[2] = 8000.0;
   return ret;
 }
 
