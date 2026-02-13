@@ -128,12 +128,6 @@ void llsm_delete_nmframe(llsm_nmframe* dst) {
   free(dst);
 }
 
-static FP_TYPE* copy_fp(FP_TYPE* src) {
-  FP_TYPE* ret = malloc(sizeof(FP_TYPE));
-  ret[0] = src[0];
-  return ret;
-}
-
 llsm_container* llsm_create_frame(int nhar, int nchannel, int nhar_e,
   int npsd) {
   llsm_container* ret = llsm_create_container(3);
@@ -141,7 +135,7 @@ llsm_container* llsm_create_frame(int nhar, int nchannel, int nhar_e,
   llsm_nmframe* nm = llsm_create_nmframe(nchannel, nhar_e, npsd);
   FP_TYPE* f0 = malloc(sizeof(FP_TYPE));
   f0[0] = 0;
-  llsm_container_attach(ret, LLSM_FRAME_F0, f0, free, copy_fp);
+  llsm_container_attach(ret, LLSM_FRAME_F0, f0, llsm_delete_fp, llsm_copy_fp);
   llsm_container_attach(ret, LLSM_FRAME_HM, hm, llsm_delete_hmframe,
     llsm_copy_hmframe);
   llsm_container_attach(ret, LLSM_FRAME_NM, nm, llsm_delete_nmframe,
