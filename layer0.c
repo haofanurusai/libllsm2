@@ -24,10 +24,8 @@
 #include "llsmutils.h"
 #include "constants.h"
 
-#define MAX_NCHANNEL 3
-
 llsm_aoptions* llsm_create_aoptions() {
-  llsm_aoptions* ret = malloc(sizeof(llsm_aoptions) + MAX_NCHANNEL * sizeof(FP_TYPE));
+  llsm_aoptions* ret = malloc(sizeof(llsm_aoptions) + LLSM_AOPTIONS_NCHANNEL_MAX * sizeof(FP_TYPE));
   ret -> thop = 0.005;
   ret -> maxnhar = 100;
   ret -> maxnhar_e = 4;

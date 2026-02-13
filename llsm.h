@@ -257,6 +257,7 @@ void llsm_delete_output(llsm_output* dst);
 /** @defgroup group_aoptions llsm_aoptions
  *  @{ */
 /** @brief Options for the analysis routine. */
+#define LLSM_AOPTIONS_NCHANNEL_MAX 3
 typedef struct {
   FP_TYPE thop;        /**< hop time (seconds) */
   int maxnhar;         /**< maximum number of harmonics */
