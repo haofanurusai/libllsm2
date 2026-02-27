@@ -25,13 +25,12 @@
 #include "constants.h"
 
 llsm_aoptions* llsm_create_aoptions() {
-  llsm_aoptions* ret = malloc(sizeof(llsm_aoptions));
+  llsm_aoptions* ret = malloc(LLSM_AOPTIONS_NCHANNEL_DEFAULT * sizeof(FP_TYPE) + sizeof(llsm_aoptions));
   ret -> thop = 0.005;
   ret -> maxnhar = 100;
   ret -> maxnhar_e = 4;
   ret -> npsd = 256;
-  ret -> nchannel = 4;
-  ret -> chanfreq = calloc(3, sizeof(FP_TYPE));
+  ret -> nchannel = LLSM_AOPTIONS_NCHANNEL_DEFAULT;
   ret -> chanfreq[0] = 2000.0;
   ret -> chanfreq[1] = 4000.0;
   ret -> chanfreq[2] = 8000.0;
@@ -44,7 +43,6 @@ llsm_aoptions* llsm_create_aoptions() {
 
 void llsm_delete_aoptions(llsm_aoptions* dst) {
   if(dst == NULL) return;
-  free(dst -> chanfreq);
   free(dst);
 }
 
