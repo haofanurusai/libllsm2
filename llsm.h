@@ -22,6 +22,11 @@
 #ifndef LLSM_H
 #define LLSM_H
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif /* __cplusplus */
+
 #define LLSM_VERSION_STRING   "2.1.0"
 #define LLSM_VERSION_MAJOR    2
 #define LLSM_VERSION_MINOR    1
@@ -363,5 +368,9 @@ llsm_container* llsm_coder_decode_layer1(llsm_coder* c, FP_TYPE* src);
 llsm_container* llsm_coder_decode_layer0(llsm_coder* c, FP_TYPE* src);
 
 /** @} */
+
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
 
 #endif

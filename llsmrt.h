@@ -22,6 +22,11 @@
 #ifndef LLSM_LLSMRT_H
 #define LLSM_LLSMRT_H
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif /* __cplusplus */
+
 #include "llsm.h"
 
 /** @defgroup group_llsmrt LLSM Real-time Synthesis
@@ -54,5 +59,9 @@ int llsm_rtsynth_buffer_fetch_decomposed(
 void llsm_rtsynth_buffer_clear(llsm_rtsynth_buffer* dst);
 
 /** #} */
+
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
 
 #endif

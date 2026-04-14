@@ -23,6 +23,11 @@
 #ifndef LLSM_UTILS_H
 #define LLSM_UTILS_H
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif /* __cplusplus */
+
 #include <ciglet/ciglet.h>
 
 #include "llsm.h"
@@ -44,5 +49,9 @@ FP_TYPE* llsm_synthesize_harmonic_frame_auto(llsm_soptions* options,
 FP_TYPE* llsm_make_filtered_pulse(llsm_container* src, lfmodel* sources,
   FP_TYPE* offsets, int num_pulses, int pre_rotate, int size, FP_TYPE fnyq,
   FP_TYPE lip_radius, FP_TYPE fs);
+
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
 
 #endif

@@ -1,6 +1,11 @@
 #ifndef LLSM_FILTER_COEF
 #define LLSM_FILTER_COEF
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif /* __cplusplus */
+
 static const int coef_size = 5;
 static const int filter_number = 48;
 static const FP_TYPE step_freq = 0.020000;
@@ -208,6 +213,10 @@ static const FP_TYPE cheby_h_b[240] = {
   0.000025298,  -0.000101190,   0.000151786,  -0.000101190,   0.000025298,
   0.000005180,  -0.000020720,   0.000031079,  -0.000020720,   0.000005180
 };
+
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
 
 #endif
 

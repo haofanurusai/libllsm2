@@ -22,6 +22,11 @@
 #ifndef LLSM_DSPUTILS_H
 #define LLSM_DSPUTILS_H
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif /* __cplusplus */
+
 /** @brief A simple F0 refinment algorithm; overwrites the input. */
 void llsm_refine_f0(FP_TYPE* x, int nx, FP_TYPE fs, FP_TYPE* f0, int nfrm,
   FP_TYPE thop);
@@ -130,5 +135,9 @@ FP_TYPE llsm_spectral_glottal_fitting(FP_TYPE* ampl, int nhar,
 /** @brief An improved moving average filter insensitive to impulse-like
  *    distortions. */
 FP_TYPE* llsm_smoothing_filter(FP_TYPE* x, int nx, int order);
+
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
 
 #endif

@@ -1,6 +1,11 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif /* __cplusplus */
+
 #define LOG2DB(x) ((x) / 2.3025851 * 20.0)
 #define LOG2IN(x) ((x) / 2.3025851 * 10.0)
 #define DB2LOG(x) ((x) * 2.3025851 / 20.0)
@@ -11,5 +16,9 @@
 #endif
 #define LOGCHI2VAR (M_PI * M_PI / 6.0)
 #define LOGRESBIAS 0.375
+
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
 
 #endif

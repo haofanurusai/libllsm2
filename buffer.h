@@ -22,6 +22,11 @@
 #ifndef LLSM_BUFFER_H
 #define LLSM_BUFFER_H
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif /* __cplusplus */
+
 #include <assert.h>
 #include <stdlib.h>
 
@@ -271,5 +276,9 @@ static inline void llsm_vringbuffer_append(llsm_vringbuffer* dst, void* x) {
   dst -> curr = (dst -> curr + 1) % dst -> capacity;
 }
 /** @} */
+
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
 
 #endif
